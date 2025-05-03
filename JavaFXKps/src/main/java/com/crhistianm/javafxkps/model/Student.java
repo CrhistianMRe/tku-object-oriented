@@ -8,6 +8,18 @@ public class Student {
     private String emailAddress;
     private int semesterId;
 
+
+    public Student(){
+    }
+    public Student(int id, String name, String surname, String phoneNumber, String emailAddress, int semesterId){
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
+        this.semesterId = semesterId;
+    }
+
     public int getId() {
         return id;
     }
@@ -54,8 +66,6 @@ public class Student {
 
     public void setSemesterId(int semesterId){
         this.semesterId = semesterId;
-        
-        
     }
 
     

@@ -4,6 +4,14 @@ package com.crhistianm.javafxkps.model;
 public class StudentAccount extends Student{
     private String accountId;
     private String password;
+
+    public StudentAccount(){
+    }
+
+    public StudentAccount(String accountId, String password){
+        this.accountId = accountId;
+        this.password = password;
+    }
     
     public String getAccountId() {
 	    return accountId;
