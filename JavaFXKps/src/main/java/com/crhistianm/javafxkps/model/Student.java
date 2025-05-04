@@ -6,18 +6,20 @@ public class Student {
     private String surname;
     private String phoneNumber;
     private String emailAddress;
-    private int semesterId;
-
+    private Account account;
+    private Semester semester;
 
     public Student(){
     }
-    public Student(int id, String name, String surname, String phoneNumber, String emailAddress, int semesterId){
+
+    public Student(int id, String name, String surname, String phoneNumber, String emailAddress, int semesterId, Account account, Semester semester){
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.phoneNumber = phoneNumber;
         this.emailAddress = emailAddress;
-        this.semesterId = semesterId;
+        this.account = account;
+        this.semester = semester;
     }
 
     public int getId() {
@@ -60,13 +62,22 @@ public class Student {
         this.emailAddress = emailAddress;
     }
 
-    public int getSemesterId(){
-        return semesterId;
+    public Account getAccount() {
+	    return account;
+    }
+    public void setAccount(Account account) {
+	    this.account = account;
     }
 
-    public void setSemesterId(int semesterId){
-        this.semesterId = semesterId;
+    public void setSemester(Semester semester) {
+	    this.semester = semester;
+    } 
+    public Semester getSemester() {
+	    return semester;
     }
+
+
+
 
     
 }
