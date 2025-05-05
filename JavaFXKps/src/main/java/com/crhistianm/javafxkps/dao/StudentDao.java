@@ -3,8 +3,8 @@ package com.crhistianm.javafxkps.dao;
 
 import java.util.List;
 
+import com.crhistianm.javafxkps.model.Account;
 import com.crhistianm.javafxkps.model.Student;
-import com.crhistianm.javafxkps.model.StudentAccount;
 
 public interface StudentDao {
 
