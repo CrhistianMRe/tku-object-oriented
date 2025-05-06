@@ -6,6 +6,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import com.crhistianm.javafxkps.dao.AccountDaoImpl;
+import com.crhistianm.javafxkps.model.Account;
+
 //import com.crhistianm.javafxkps.dbconnection.KpsConnection;
 
 public class MainApplication extends javafx.application.Application {
@@ -19,6 +22,9 @@ public class MainApplication extends javafx.application.Application {
         //KpsConnection con = new KpsConnection();
         //con.openConnection();
         //con.closeConnection();
+        //AccountDaoImpl acc = new AccountDaoImpl();
+        
+        //System.out.println(acc.loginByAccNum(new Account("pass2", "413854893", 1)));
     }
 
     public static void main(String[] args) {

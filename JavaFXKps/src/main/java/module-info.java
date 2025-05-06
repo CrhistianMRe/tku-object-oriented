@@ -10,6 +10,6 @@ module com.crhistianm.javafxkps {
 
     opens com.crhistianm.javafxkps to javafx.fxml;
     exports com.crhistianm.javafxkps;
-    exports com.crhistianm.javafxkps.controllers;
-    opens com.crhistianm.javafxkps.controllers to javafx.fxml;
+    exports com.crhistianm.javafxkps.controller;
+    opens com.crhistianm.javafxkps.controller to javafx.fxml;
 }
