@@ -1,4 +1,4 @@
-package com.crhistianm.javafxkps.controllers;
+package com.crhistianm.javafxkps.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
