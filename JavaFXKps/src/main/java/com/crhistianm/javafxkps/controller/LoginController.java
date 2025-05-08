@@ -4,10 +4,17 @@ import com.crhistianm.javafxkps.dao.AccountDaoImpl;
 import com.crhistianm.javafxkps.dao.AuthDaoImpl;
 import com.crhistianm.javafxkps.model.Account;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.io.IOException;
 
 public class LoginController {
     @FXML // Al estar declarado en el FXML busca en controlador el boton por el nombre puesto en esta clase y el ID
@@ -16,6 +23,7 @@ public class LoginController {
     public TextField textFieldUsername;
     @FXML
     public TextField textFieldPassword;
+
 
     @FXML
     public void handleButtonClick(){
@@ -28,8 +36,21 @@ public class LoginController {
             //auth return teacher or student 
             JOptionPane.showMessageDialog(null,"Login succesfull you are a ".concat(auth.verifyAccountType(dataId)));
 
-                
-            
+
+            if (auth.verifyAccountType(dataId).equals("Teacher")){
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("/com/crhistianm/javafxkps/view/test-view.fxml"));
+                    Scene scene = new Scene(root);
+                    Stage teacherS = new Stage();
+                    teacherS.setTitle("Grades");
+                    teacherS.setScene(scene);
+                    teacherS.initModality(Modality.WINDOW_MODAL);
+                    teacherS.initOwner(buttonLogin.getScene().getWindow());
+                    teacherS.show();
+                } catch (IOException e){
+                    System.out.println("Error loading teacherView "+ e);
+                }
+            }
 
         }else{
             JOptionPane.showMessageDialog(null,"User account number or password not correct");
