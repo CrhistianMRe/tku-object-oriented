@@ -59,5 +59,15 @@ public class Teacher {
 	    this.account = account;
     }
 
-
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", account=" + account +
+                '}';
+    }
 }

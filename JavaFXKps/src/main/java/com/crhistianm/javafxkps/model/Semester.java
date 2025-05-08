@@ -25,4 +25,12 @@ public class Semester {
 	    this.name = name;
     }
 
+
+    @Override
+    public String toString() {
+        return "Semester{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -77,7 +77,16 @@ public class Student {
     }
 
 
-
-
-    
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", account=" + account +
+                ", semester=" + semester +
+                '}';
+    }
 }
