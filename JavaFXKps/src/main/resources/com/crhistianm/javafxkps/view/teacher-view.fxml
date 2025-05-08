@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <TableView prefHeight="101.0" prefWidth="770.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Name" />
+          <TableColumn prefWidth="75.0" text="Surname" />
+            <TableColumn prefWidth="75.0" text="Email" />
+            <TableColumn prefWidth="75.0" text="Email" />
+            <TableColumn prefWidth="131.20001220703125" text="Phone Number" />
+            <TableColumn prefWidth="131.20001220703125" text="Phone Number" />
+            <TableColumn prefWidth="201.5999755859375" text="Course Name" />
+        </columns>
+      </TableView>
+   </top>
+   <center>
+      <TableView prefHeight="255.0" prefWidth="703.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="197.59993588924408" text="Student ID" />
+          <TableColumn prefWidth="132.0" text="Name" />
+            <TableColumn prefWidth="158.4000244140625" text="Surname" />
+            <TableColumn prefWidth="108.79989624023438" text="Grade" />
+            <TableColumn prefWidth="108.7999267578125" text="Date" />
+        </columns>
+      </TableView>
+   </center>
+   <left>
+      <Pane prefHeight="298.0" prefWidth="66.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="1.0" layoutY="124.0" mnemonicParsing="false" text="Change" />
+         </children>
+      </Pane>
+   </left>
+</BorderPane>
