@@ -25,7 +25,7 @@ public class AccountDaoImpl implements AccountDao{
     @Override
     public int loginByAccNum(Account acc) {
         ResultSet rs;
-        //If returns this number it will be an error or didnt find
+        //If returns this number it will be an error or doesnt find
         int accId = 666;
 
         try {
