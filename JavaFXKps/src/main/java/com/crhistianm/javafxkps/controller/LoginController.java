@@ -19,14 +19,13 @@ public class LoginController {
 
     @FXML
     public void handleButtonClick(){
-
         AccountDaoImpl account = new AccountDaoImpl();
         //Get from textFields all data and query
-
-        if (account.loginByAccNum(new Account(this.textFieldPassword.getText(), this.textFieldUsername.getText(), 0)) != 666){
+        //This saves accId from accNumber
+        int dataId =account.loginByAccNum(new Account(this.textFieldPassword.getText(), this.textFieldUsername.getText(), 0));
+        if (dataId != 666){
             JOptionPane.showMessageDialog(null,"Login succesfull");
         }else{
-
             JOptionPane.showMessageDialog(null,"User account number or password not correct");
         }
 
