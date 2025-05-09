@@ -38,14 +38,24 @@ public class LoginController {
 
             if (auth.verifyAccountType(dataId).equals("Teacher")){
                 try {
-                    Parent root = FXMLLoader.load(getClass().getResource("/com/crhistianm/javafxkps/view/steacher-view.fxml"));
+                    TeacherController control = new TeacherController();
+                    //Before control.setId so it replaces the controller after that
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/crhistianm/javafxkps/view/steacher-view.fxml"));
+                    control.setId(dataId);
+                    fxmlLoader.setController(control); 
+
+                    Parent root = fxmlLoader.load();
+ 
                     Scene scene = new Scene(root);
+                    
                     Stage teacherS = new Stage();
+                    
                     teacherS.setTitle("Grades");
                     teacherS.setScene(scene);
                     teacherS.initModality(Modality.WINDOW_MODAL);
                     teacherS.initOwner(buttonLogin.getScene().getWindow());
                     teacherS.show();
+                
                 } catch (IOException e){
                     System.out.println("Error loading teacherView "+ e);
                 }
