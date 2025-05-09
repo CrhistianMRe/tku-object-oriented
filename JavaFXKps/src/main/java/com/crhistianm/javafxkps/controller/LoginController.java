@@ -9,7 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -39,7 +38,7 @@ public class LoginController {
 
             if (auth.verifyAccountType(dataId).equals("Teacher")){
                 try {
-                    Parent root = FXMLLoader.load(getClass().getResource("/com/crhistianm/javafxkps/view/test-view.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/com/crhistianm/javafxkps/view/steacher-view.fxml"));
                     Scene scene = new Scene(root);
                     Stage teacherS = new Stage();
                     teacherS.setTitle("Grades");

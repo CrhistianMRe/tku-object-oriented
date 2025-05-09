@@ -19,6 +19,7 @@
                 <TableColumn text="Account number" prefWidth="150" />
                 <TableColumn text="Student name" prefWidth="300" />
                 <TableColumn text="Final Grade" prefWidth="100" />
+                <TableColumn text="Grade Date" prefWidth="100" />
             </columns>
         </TableView>
 
