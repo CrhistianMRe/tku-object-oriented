@@ -14,13 +14,13 @@
 
         <HBox spacing="10">
             <ComboBox promptText="Select course" fx:id="comboCourse" onAction="#handleComboSelection"><!--controller called on loginController-->
-            <items>
+            <!--<items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Option1"/>
                     <String fx:value="Option2"/>
                     <String fx:value="Option3"/>
                 </FXCollections>
-            </items>
+            </items>-->
             </ComboBox>
             <TextField promptText="Search student..." />
         </HBox>

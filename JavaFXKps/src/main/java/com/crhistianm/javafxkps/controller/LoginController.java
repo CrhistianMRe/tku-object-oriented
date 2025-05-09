@@ -30,7 +30,7 @@ public class LoginController {
         AuthDaoImpl auth = new AuthDaoImpl(); 
         //Get from textFields all data and query
         //This saves accId from accNumber
-        int dataId =account.loginByAccNum(new Account(this.textFieldPassword.getText(), this.textFieldUsername.getText(), 0));
+        int dataId = account.loginByAccNum(new Account(this.textFieldPassword.getText(), this.textFieldUsername.getText(), 0));
         if (dataId != 666){
             //auth return teacher or student 
             JOptionPane.showMessageDialog(null,"Login succesfull you are a ".concat(auth.verifyAccountType(dataId)));
@@ -39,9 +39,12 @@ public class LoginController {
             if (auth.verifyAccountType(dataId).equals("Teacher")){
                 try {
                     TeacherController control = new TeacherController();
+
                     //Before control.setId so it replaces the controller after that
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/crhistianm/javafxkps/view/steacher-view.fxml"));
+
                     control.setId(dataId);
+
                     fxmlLoader.setController(control); 
 
                     Parent root = fxmlLoader.load();
@@ -51,9 +54,13 @@ public class LoginController {
                     Stage teacherS = new Stage();
                     
                     teacherS.setTitle("Grades");
+
                     teacherS.setScene(scene);
+
                     teacherS.initModality(Modality.WINDOW_MODAL);
+ 
                     teacherS.initOwner(buttonLogin.getScene().getWindow());
+
                     teacherS.show();
                 
                 } catch (IOException e){
