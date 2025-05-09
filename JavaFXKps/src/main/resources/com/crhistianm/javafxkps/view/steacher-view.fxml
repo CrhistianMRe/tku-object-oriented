@@ -4,22 +4,33 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefWidth="800" fx:controller="com.crhistianm.javafxkps.controller.TeacherController" prefHeight="600" stylesheets="/style/teacherstyle.css">
+
     <VBox spacing="10" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" >
 
         <Label text="Student Grades" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
 
         <HBox spacing="10">
-            <ComboBox promptText="Select course" />
+            <ComboBox promptText="Select course" fx:id="comboCourse" onAction="#handleComboSelection">
+            <!--<items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Option1"/>
+                    <String fx:value="Option2"/>
+                    <String fx:value="Option3"/>
+                </FXCollections>
+            </items> -->
+            </ComboBox>
             <TextField promptText="Search student..." />
         </HBox>
 
         <TableView>
             <columns>
                 <TableColumn text="Account number" prefWidth="150" />
-                <TableColumn text="Student name" prefWidth="300" />
+                <TableColumn text="Student name" prefWidth="350" />
                 <TableColumn text="Final Grade" prefWidth="100" />
-                <TableColumn text="Grade Date" prefWidth="100" />
+                <TableColumn text="Grade Date" prefWidth="160" />
             </columns>
         </TableView>
 
