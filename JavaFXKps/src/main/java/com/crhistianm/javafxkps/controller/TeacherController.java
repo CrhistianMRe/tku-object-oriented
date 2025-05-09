@@ -1,5 +1,7 @@
 package com.crhistianm.javafxkps.controller;
 
+import com.crhistianm.javafxkps.dao.TeacherDaoImpl;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -15,7 +17,9 @@ public class TeacherController {
     
     @FXML
     public void handleComboSelection(){
-        System.out.println("Course selected");
+
+        TeacherDaoImpl teach = new TeacherDaoImpl();
+        teach.findByAccId(7);
 
     }
 

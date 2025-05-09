@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import com.crhistianm.javafxkps.dao.AccountDaoImpl;
+import com.crhistianm.javafxkps.dao.TeacherDaoImpl;
 import com.crhistianm.javafxkps.model.Account;
 
 //import com.crhistianm.javafxkps.dbconnection.KpsConnection;
@@ -24,7 +25,8 @@ public class MainApplication extends javafx.application.Application {
         //con.openConnection();
         //con.closeConnection();
         //AccountDaoImpl acc = new AccountDaoImpl();
-        
+        TeacherDaoImpl teach = new TeacherDaoImpl();
+        teach.findByAccId(7);       
         //System.out.println(acc.loginByAccNum(new Account("pass2", "413854893", 1)));
     }
 
