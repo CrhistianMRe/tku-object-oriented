@@ -25,8 +25,8 @@ public class MainApplication extends javafx.application.Application {
         //con.openConnection();
         //con.closeConnection();
         //AccountDaoImpl acc = new AccountDaoImpl();
-        TeacherDaoImpl teach = new TeacherDaoImpl();
-        teach.findByAccId(7);       
+        //TeacherDaoImpl teach = new TeacherDaoImpl();
+        //teach.findByAccId(7);       
         //System.out.println(acc.loginByAccNum(new Account("pass2", "413854893", 1)));
     }
 
