@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.crhistianm.javafxkps.dbconnection.KpsConnection;
+import com.crhistianm.javafxkps.dto.StudentGradeDto;
 import com.crhistianm.javafxkps.dto.StudentGradeEditDto;
 import com.crhistianm.javafxkps.model.Grade;
 
@@ -18,12 +19,12 @@ public class GradeDaoImpl implements GradeDao{
     private String answer;
     private PreparedStatement execute;
 
-   @Override
-    public ArrayList<Grade> findAll(Grade student) {
+    @Override
+    public ArrayList<StudentGradeDto> findAllStudentGrade(int accId) {
         return null;
-    } 
+    }
 
-   @Override
+    @Override
    public String updateGrade(Grade grade) {
         
        try {
