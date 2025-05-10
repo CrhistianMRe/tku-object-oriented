@@ -45,6 +45,8 @@ public class TeacherController {
     @FXML
     public TableView tblStudent;
 
+    @FXML
+    public Button btnUpdate;
 
 
     @FXML 
@@ -77,7 +79,13 @@ public class TeacherController {
     }
 
     @FXML
-    public void handleButtonClick(){
+    public void handleUpdateButtonClick(){
+
+
+    }
+
+    @FXML
+    public void handleEditButtonClick(){
         this.tblStudent.setEditable(true);
         this.colTotalGrade.setCellFactory(TextFieldTableCell.forTableColumn());
 

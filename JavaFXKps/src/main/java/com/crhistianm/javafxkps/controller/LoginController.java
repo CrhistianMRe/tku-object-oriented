@@ -33,7 +33,7 @@ public class LoginController {
         int dataId = account.loginByAccNum(new Account(this.textFieldPassword.getText(), this.textFieldUsername.getText(), 0));
         if (dataId != 666){
             //auth return teacher or student 
-            JOptionPane.showMessageDialog(null,"Login succesfull you are a ".concat(auth.verifyAccountType(dataId)));
+            //JOptionPane.showMessageDialog(null,"Login succesfull you are a ".concat(auth.verifyAccountType(dataId)));
 
 
             if (auth.verifyAccountType(dataId).equals("Teacher")){
