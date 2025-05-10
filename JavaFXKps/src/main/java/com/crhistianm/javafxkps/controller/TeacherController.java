@@ -2,21 +2,28 @@ package com.crhistianm.javafxkps.controller;
 
 import java.util.ArrayList;
 
+
+import com.crhistianm.javafxkps.dao.GradeDaoImpl;
 import com.crhistianm.javafxkps.dao.SubjectDaoImpl;
 import com.crhistianm.javafxkps.dao.TeacherDaoImpl;
+import com.crhistianm.javafxkps.dto.StudentGradeEditDto;
 import com.crhistianm.javafxkps.model.Subject;
 import com.crhistianm.javafxkps.model.Teacher;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 public class TeacherController {
     TeacherDaoImpl teacherData = new TeacherDaoImpl();
     SubjectDaoImpl subjectData = new SubjectDaoImpl();
+    GradeDaoImpl gradeData = new GradeDaoImpl();
     Teacher teacher = new Teacher();
 
     private int id;
@@ -30,6 +37,22 @@ public class TeacherController {
     @FXML
     public TextField txtSearch;
 
+    @FXML
+    public TableView tblStudent;
+
+
+
+    @FXML 
+    public TableColumn<StudentGradeEditDto, String> colAccountNumber;
+
+    @FXML
+    public TableColumn <StudentGradeEditDto, String> colStudentName;
+
+    @FXML
+    public TableColumn <StudentGradeEditDto, String> colTotalGrade;
+
+    @FXML
+    public TableColumn <StudentGradeEditDto, String> colGradeDate;
 
     public void setId(int id) {
 
@@ -51,8 +74,22 @@ public class TeacherController {
     
     @FXML
     public void handleComboSelection(){
-        System.out.println("hola");
 
+        tblStudent.getItems().clear();
+        StudentGradeEditDto dto = new StudentGradeEditDto();
+        dto.setSubjectName(String.valueOf(comboCourse.getValue()));
+        System.out.println(dto.getSubjectName());
+        for (StudentGradeEditDto grade: gradeData.findAllByName(dto)) {
+            System.out.println(grade);
+
+
+            colAccountNumber.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getAccountNumber()));
+            colStudentName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStudentName()));
+            colTotalGrade.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getTotalGrade())));
+            colGradeDate.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getGradeDate())));
+
+            tblStudent.getItems().add(grade);
+        }
     }
 
 

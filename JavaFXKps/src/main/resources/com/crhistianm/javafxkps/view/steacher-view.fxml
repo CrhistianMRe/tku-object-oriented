@@ -25,12 +25,12 @@
             <TextField promptText="Search student..." />
         </HBox>
 
-        <TableView>
+        <TableView fx:id="tblStudent">
             <columns>
-                <TableColumn text="Account number" prefWidth="150" />
-                <TableColumn text="Student name" prefWidth="350" />
-                <TableColumn text="Final Grade" prefWidth="100" />
-                <TableColumn text="Grade Date" prefWidth="160" />
+                <TableColumn fx:id="colAccountNumber" text="Account number" prefWidth="150" />
+                <TableColumn fx:id="colStudentName" text="Student name" prefWidth="350" />
+                <TableColumn fx:id="colTotalGrade" text="Total Grade" prefWidth="100" />
+                <TableColumn fx:id="colGradeDate" text="Grade Date" prefWidth="160" />
             </columns>
         </TableView>
 
