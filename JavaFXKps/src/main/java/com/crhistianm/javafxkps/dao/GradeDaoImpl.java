@@ -28,13 +28,13 @@ public class GradeDaoImpl implements GradeDao{
             connect.openConnection();
             sql = "SELECT account.Account_Number, student.Name, student.Surname, "
                 +"subject.Name AS subjectName, semester.Name AS semesterName, "
-                +" CONCAT(teacher.Name, ' ' , teacher.Surname) AS teacherName, grade.Total_Score"
+                +" CONCAT(teacher.Name, ' ' , teacher.Surname) AS teacherName, grade.Total_Grade"
                 +" FROM account INNER JOIN student ON student.Account_ID_FK = account.ID"
                 +" INNER JOIN semester ON student.Semester_ID_FK = semester.ID" 
                 +" INNER JOIN grade ON grade.Student_ID_FK = student.ID" 
                 +" INNER JOIN subject ON grade.Subject_ID_FK = subject.ID" 
                 +" INNER JOIN teacher ON subject.Teacher_ID_FK = teacher.ID"
-                +" WHERE account.Account=?";
+                +" WHERE account.ID=?";
 
             list = new ArrayList();
 
@@ -52,7 +52,7 @@ public class GradeDaoImpl implements GradeDao{
                 st.setSubjectName(rs.getString("subjectName"));
                 st.setSemesterName(rs.getString("semesterName"));
                 st.setTeacherName(rs.getString("teacherName"));
-                st.setTotalScore(rs.getFloat("Total_Score"));
+                st.setTotalScore(rs.getFloat("Total_Grade"));
                 list.add(st);
             }
             

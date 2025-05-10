@@ -5,21 +5,20 @@
 <?import javafx.scene.text.*?>
 
 <Pane prefHeight="405.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <TableView fx:id="tblData" layoutX="50.0" layoutY="42.0" prefHeight="122.0" prefWidth="600.0" style="-fx-background-color: white;">
+      <TableView fx:id="tblData" layoutX="50.0" layoutY="42.0" prefHeight="250.0" prefWidth="600.0">
         <columns>
-            <TableColumn prefWidth="155.0" text="Subject name" />
-          <TableColumn prefWidth="160.5999984741211" text="Semester" />
-            <TableColumn prefWidth="160.79995727539062" text="Teacher" />
-            <TableColumn prefWidth="120.39996337890625" text="Total Score" />
+            <TableColumn fx:id="colSubjectName" prefWidth="155.0" text="Subject name" />
+            <TableColumn fx:id="colSemesterName" prefWidth="160.5999984741211" text="Semester" />
+            <TableColumn fx:id="colTeacherName" prefWidth="160.79995727539062" text="Teacher" />
+            <TableColumn fx:id="colTotalGrade" prefWidth="120.39996337890625" text="Total Score" />
         </columns>
       </TableView>
-      <Button layoutX="330.0" layoutY="346.0" mnemonicParsing="false" text="Back" fx:id="btnBack"/>
-      <Label layoutX="270.0" layoutY="240.0" text="Average Score: " fx:id="lblAverage">
+      <Button fx:id="btnBack" layoutX="330.0" layoutY="346.0" mnemonicParsing="false" text="Back" />
+      <Label fx:id="lblAverage" layoutX="266.0" layoutY="298.0" text="Average Score: ">
          <font>
             <Font size="23.0" />
-         </font></Label>
-      <Label layoutX="63.0" layoutY="14.0" text="Account number:" fx:id="lblAccount" />
-      <Label layoutX="314.0" layoutY="14.0" text="Name:" fx:id="lblName"/>
-   </children>
+         </font>
+      </Label>
+      <Label fx:id="lblAccount" layoutX="63.0" layoutY="14.0" text="Account number:" />
+      <Label fx:id="lblName" layoutX="314.0" layoutY="14.0" text="Name:" />
 </Pane>
