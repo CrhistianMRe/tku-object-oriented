@@ -106,7 +106,7 @@ public class TeacherController {
             System.out.println(grade);
 
 
-            colGradeId.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getGrade()));
+            colGradeId.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getGradeId())));
             colAccountNumber.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getAccountNumber()));
             colStudentName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStudentName()));
             colTotalGrade.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getTotalGrade())));

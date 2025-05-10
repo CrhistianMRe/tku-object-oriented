@@ -73,6 +73,13 @@ public class StudentGradeEditDto {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "StudentGradeEditDto{" +
+                "gradeId=" + gradeId +
+                ", subjectName='" + subjectName + '\'' +
+                ", accountNumber='" + accountNumber + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", totalGrade=" + totalGrade +
+                ", gradeDate=" + gradeDate +
+                '}';
     }
 }

@@ -48,6 +48,7 @@ public class GradeDaoImpl implements GradeDao{
             while(rs.next()){
                 StudentGradeEditDto g = new StudentGradeEditDto();
 
+                g.setGradeId(rs.getInt("ID"));
                 g.setAccountNumber(rs.getString("Account_Number"));
                 g.setStudentName((rs.getString("Name").concat(" ").concat(rs.getString("Surname"))));
                 g.setTotalGrade(rs.getDouble("Total_Grade"));
