@@ -15,13 +15,38 @@ import com.crhistianm.javafxkps.model.Grade;
 public class GradeDaoImpl implements GradeDao{
     KpsConnection connect = new KpsConnection();
     private String sql;
+    private String answer;
     private PreparedStatement execute;
 
    @Override
     public ArrayList<Grade> findAll(Grade student) {
-
         return null;
     } 
+
+   @Override
+   public String updateGrade(Grade grade) {
+        
+       try {
+           connect.openConnection();
+
+           sql = "UPDATE grade set grade.Grade_Date=?, grade.Total_Grade=? WHERE grade.ID =?";
+
+           execute = connect.getMyConnection().prepareStatement(sql);
+           execute.setDate(1, grade.getGradeDate());
+           execute.setFloat(2, grade.getTotalGrade());
+           execute.setInt(3, grade.getId());
+
+           execute.executeUpdate();
+
+           answer= "Data updated successfully";
+           
+       } catch (SQLException e) {
+           System.out.println("Error on update grade"+ e);
+       }finally{
+           connect.closeConnection();
+       }
+       return answer;
+   }
 
    @Override
    public ArrayList<StudentGradeEditDto> findAllBySearch(StudentGradeEditDto dto) {

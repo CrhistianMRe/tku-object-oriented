@@ -1,6 +1,6 @@
 package com.crhistianm.javafxkps.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Grade

@@ -16,4 +16,6 @@ public interface GradeDao {
      
     ArrayList<Grade> findAll(Grade student);
 
+    String updateGrade(Grade grade);
+
 }

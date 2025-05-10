@@ -1,6 +1,6 @@
 package com.crhistianm.javafxkps.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class StudentGradeEditDto {
     private int gradeId;
