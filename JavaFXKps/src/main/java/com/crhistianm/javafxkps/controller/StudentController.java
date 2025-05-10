@@ -1,5 +1,6 @@
 package com.crhistianm.javafxkps.controller;
 
+import com.crhistianm.javafxkps.dao.GradeDaoImpl;
 import com.crhistianm.javafxkps.dto.StudentGradeDto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +12,13 @@ import javax.swing.text.TableView;
 
 public class StudentController {
     ObservableList<StudentGradeDto> list;
+    GradeDaoImpl gradeData = new GradeDaoImpl();
+
+    private int accId;
+
+    public void setAccId(int accId) {
+	    this.accId = accId;
+    }
     @FXML
     public TableView tblData;
 
@@ -29,7 +37,9 @@ public class StudentController {
     @FXML
     public void initializable(){
 
-        list = FXCollections.observableList(null);
+        list = FXCollections.observableList(gradeData.findAllStudentGrade(accId));
+
     }
+
 
 }
