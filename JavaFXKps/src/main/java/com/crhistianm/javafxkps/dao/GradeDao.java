@@ -11,6 +11,8 @@ import com.crhistianm.javafxkps.model.Grade;
 public interface GradeDao {
 
     ArrayList<StudentGradeEditDto> findAllByName(StudentGradeEditDto dto);
+    //Same as the upper one but with acc number search
+    ArrayList<StudentGradeEditDto> findAllBySearch(StudentGradeEditDto dto);
      
     ArrayList<Grade> findAll(Grade student);
 

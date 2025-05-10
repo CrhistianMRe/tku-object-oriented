@@ -22,7 +22,7 @@
                 </FXCollections>
             </items>-->
             </ComboBox>
-            <TextField promptText="Search student..." />
+            <TextField promptText="Search student..." fx:id="txtSearch" onKeyTyped="#handleTextTyped"/>
         </HBox>
 
         <TableView fx:id="tblStudent">

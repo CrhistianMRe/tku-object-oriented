@@ -48,7 +48,6 @@ public class TeacherController {
     @FXML
     public Button btnUpdate;
 
-
     @FXML 
     public TableColumn<StudentGradeEditDto, String> colGradeId;
 
@@ -65,9 +64,7 @@ public class TeacherController {
     public TableColumn <StudentGradeEditDto, String> colGradeDate;
 
     public void setId(int id) {
-
         this.id = id;
-        //System.out.println("Dentro : " + id);
     }
 
     //Initialize loads after fxml
@@ -102,9 +99,13 @@ public class TeacherController {
         StudentGradeEditDto dto = new StudentGradeEditDto();
         dto.setSubjectName(String.valueOf(comboCourse.getValue()));
         System.out.println(dto.getSubjectName());
-        for (StudentGradeEditDto grade: gradeData.findAllByName(dto)) {
-            System.out.println(grade);
+        fillTableCombo(dto);
+        
+    }
 
+    private void fillTableCombo(StudentGradeEditDto dto){
+        for (StudentGradeEditDto grade: gradeData.findAllByName(dto)) {
+            System.out.println("to string : "+ grade);
 
             colGradeId.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getGradeId())));
             colAccountNumber.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getAccountNumber()));
@@ -114,6 +115,29 @@ public class TeacherController {
 
             tblStudent.getItems().add(grade);
         }
+    }
+    private void fillTableSearch(StudentGradeEditDto dto){
+        for (StudentGradeEditDto grade: gradeData.findAllBySearch(dto)) {
+            System.out.println("to string : "+ grade);
+
+            colGradeId.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getGradeId())));
+            colAccountNumber.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getAccountNumber()));
+            colStudentName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStudentName()));
+            colTotalGrade.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getTotalGrade())));
+            colGradeDate.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getGradeDate())));
+
+            tblStudent.getItems().add(grade);
+        }
+    }
+
+    @FXML
+    public void handleTextTyped(){
+        this.tblStudent.getItems().clear();
+        StudentGradeEditDto dtoType = new StudentGradeEditDto();
+        dtoType.setSubjectName(String.valueOf(comboCourse.getValue()));
+        dtoType.setAccountNumber(this.txtSearch.getText());
+        fillTableSearch(dtoType);
+        
     }
 
 
