@@ -14,11 +14,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.TextFieldTableCell;
 
 public class TeacherController {
     TeacherDaoImpl teacherData = new TeacherDaoImpl();
@@ -30,6 +32,9 @@ public class TeacherController {
 
     @FXML
     public Label lblName;
+    
+    @FXML
+    public Button btnEdit;
 
     @FXML
     public ComboBox comboCourse;
@@ -69,6 +74,13 @@ public class TeacherController {
         for (Subject subject: this.subjectData.findByTeacherId(teacher.getId())){
               comboCourse.getItems().addAll(subject.getName());
           }  
+    }
+
+    @FXML
+    public void handleButtonClick(){
+        this.tblStudent.setEditable(true);
+        this.colTotalGrade.setCellFactory(TextFieldTableCell.forTableColumn());
+
     }
 
     

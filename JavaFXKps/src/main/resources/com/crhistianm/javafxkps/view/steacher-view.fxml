@@ -35,8 +35,7 @@
         </TableView>
 
         <HBox spacing="10" alignment="CENTER_RIGHT">
-            <Button text="Details" />
-            <Button text="Edit grade" />
+            <Button fx:id="btnEdit" text="Edit grade"  onAction="#handleButtonClick"/>
         </HBox>
     </VBox>
 </AnchorPane>
