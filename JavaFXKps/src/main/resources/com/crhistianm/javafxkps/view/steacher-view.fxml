@@ -27,17 +27,18 @@
 
         <TableView fx:id="tblStudent">
             <columns>
-                <TableColumn fx:id="colGradeId" text="ID" prefWidth="0" />
+                <TableColumn fx:id="colGradeId" text="ID" prefWidth="10" />
                 <TableColumn fx:id="colAccountNumber" text="Account number" prefWidth="150" />
                 <TableColumn fx:id="colStudentName" text="Student name" prefWidth="350" />
-                <TableColumn fx:id="colTotalGrade" text="Total Grade" prefWidth="130" />
+                <TableColumn fx:id="colTotalGrade" text="Total Grade" prefWidth="130" onEditCommit="#handleGradeChange"/>
                 <TableColumn fx:id="colGradeDate" text="Grade Date" prefWidth="160" />
             </columns>
         </TableView>
 
         <HBox spacing="10" alignment="CENTER_RIGHT">
             <Button fx:id="btnEdit" text="Edit grade"  onAction="#handleEditButtonClick"/>
-            <Button fx:id="btnUpdate" text="Update Grades"  onAction="#handleUpdateButtonClick"/>
+            <Button fx:id="btnRestart" text="Restart"  onAction="#handleButtonRestartClick"/>
+            <Button fx:id="btnAdd" text="Add"  onAction="#handleButtonAddClick"/>
         </HBox>
     </VBox>
 </AnchorPane>

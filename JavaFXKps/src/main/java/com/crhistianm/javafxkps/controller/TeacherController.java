@@ -1,17 +1,22 @@
 package com.crhistianm.javafxkps.controller;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
 
 import com.crhistianm.javafxkps.dao.GradeDaoImpl;
 import com.crhistianm.javafxkps.dao.SubjectDaoImpl;
 import com.crhistianm.javafxkps.dao.TeacherDaoImpl;
 import com.crhistianm.javafxkps.dto.StudentGradeEditDto;
+import com.crhistianm.javafxkps.model.Grade;
 import com.crhistianm.javafxkps.model.Subject;
 import com.crhistianm.javafxkps.model.Teacher;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -26,6 +31,8 @@ public class TeacherController {
     TeacherDaoImpl teacherData = new TeacherDaoImpl();
     SubjectDaoImpl subjectData = new SubjectDaoImpl();
     GradeDaoImpl gradeData = new GradeDaoImpl();
+    private float totalGradeChange;
+        
     Teacher teacher = new Teacher();
 
     private int id;
@@ -43,7 +50,10 @@ public class TeacherController {
     public TextField txtSearch;
 
     @FXML
-    public TableView tblStudent;
+    public TableView<StudentGradeEditDto> tblStudent;
+
+    @FXML
+    public Button btnRestart;
 
     @FXML
     public Button btnUpdate;
@@ -63,6 +73,8 @@ public class TeacherController {
     @FXML
     public TableColumn <StudentGradeEditDto, String> colGradeDate;
 
+
+
     public void setId(int id) {
         this.id = id;
     }
@@ -76,30 +88,90 @@ public class TeacherController {
         for (Subject subject: this.subjectData.findByTeacherId(teacher.getId())){
               comboCourse.getItems().addAll(subject.getName());
           }  
+        
+    }
+    @FXML
+    public void handleGradeChange(TableColumn.CellEditEvent<StudentGradeEditDto, String> event){
+            int index = this.tblStudent.getSelectionModel().getSelectedIndex();
+            ObservableList<StudentGradeEditDto>list; 
+
+                totalGradeChange=(Float.valueOf(event.getNewValue()));
+               
+
+            System.out.println("salta" + String.valueOf(totalGradeChange)); 
+        if(index != -1 && totalGradeChange != 0){
+            list = this.tblStudent.getItems(); 
+            Grade grade = new Grade();
+            grade.setId(list.get(index).getGradeId());
+            System.out.println(grade.getId());
+            System.out.println("");
+            grade.setGradeDate(java.sql.Date.valueOf(LocalDate.now()));
+            grade.setTotalGrade(totalGradeChange);
+
+
+            JOptionPane.showMessageDialog(null,gradeData.updateGrade(grade));
+            comboFill();
+            totalGradeChange = 0;
+            
+            
+
+
+
+
+        }else {
+            JOptionPane.showMessageDialog(null, "Select a row to update");
+        }
+    }
+
+    @FXML
+    public void handleButtonAddClick(){}
+
+    public void changeViewStatus(boolean bool){
+
+           this.tblStudent.setDisable(bool);
+           this.btnEdit.setDisable(bool);
+           this.txtSearch.setDisable(bool);
+           this.comboCourse.setDisable(bool);
     }
 
     @FXML
     public void handleUpdateButtonClick(){
-        System.out.println(this.tblStudent.getSelectionModel().getSelectedIndex());
+        
 
+    }
+    @FXML
+    public void handleButtonRestartClick(){
+        this.tblStudent.setEditable(false);
+        
+        comboFill();
+     
+        
     }
 
     @FXML
     public void handleEditButtonClick(){
         this.tblStudent.setEditable(true);
         this.colTotalGrade.setCellFactory(TextFieldTableCell.forTableColumn());
+        
 
     }
 
+    public void comboFill(){
+        tblStudent.getItems().clear();
+
+        this.txtSearch.clear();
+        StudentGradeEditDto dto = new StudentGradeEditDto();
+
+        dto.setSubjectName(String.valueOf(comboCourse.getValue()));
+
+        System.out.println(dto.getSubjectName());
+
+        fillTableCombo(dto);
+    }
     
     @FXML
     public void handleComboSelection(){
-
-        tblStudent.getItems().clear();
-        StudentGradeEditDto dto = new StudentGradeEditDto();
-        dto.setSubjectName(String.valueOf(comboCourse.getValue()));
-        System.out.println(dto.getSubjectName());
-        fillTableCombo(dto);
+        comboFill() ;
         
     }
 
