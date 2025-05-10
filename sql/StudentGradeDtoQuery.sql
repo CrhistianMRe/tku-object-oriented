@@ -4,4 +4,4 @@ SELECT account.Account_Number, student.Name, student.Surname, subject.Name AS su
     INNER JOIN grade ON grade.Student_ID_FK = student.ID 
     INNER JOIN subject ON grade.Subject_ID_FK = subject.ID 
     INNER JOIN teacher ON subject.Teacher_ID_FK = teacher.ID
-    WHERE account.ID = 1;
+    WHERE account.Account=?;

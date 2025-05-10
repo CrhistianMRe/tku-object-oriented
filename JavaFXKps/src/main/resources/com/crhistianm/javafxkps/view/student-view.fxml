@@ -6,7 +6,7 @@
 
 <Pane prefHeight="405.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView layoutX="50.0" layoutY="42.0" prefHeight="122.0" prefWidth="600.0" style="-fx-background-color: white;">
+      <TableView fx:id="tblData" layoutX="50.0" layoutY="42.0" prefHeight="122.0" prefWidth="600.0" style="-fx-background-color: white;">
         <columns>
             <TableColumn prefWidth="155.0" text="Subject name" />
           <TableColumn prefWidth="160.5999984741211" text="Semester" />
@@ -14,12 +14,12 @@
             <TableColumn prefWidth="120.39996337890625" text="Total Score" />
         </columns>
       </TableView>
-      <Button layoutX="330.0" layoutY="346.0" mnemonicParsing="false" text="Back" />
-      <Label layoutX="270.0" layoutY="240.0" text="Average Score: ">
+      <Button layoutX="330.0" layoutY="346.0" mnemonicParsing="false" text="Back" fx:id="btnBack"/>
+      <Label layoutX="270.0" layoutY="240.0" text="Average Score: " fx:id="lblAverage">
          <font>
             <Font size="23.0" />
          </font></Label>
-      <Label layoutX="63.0" layoutY="14.0" text="Account number:" />
-      <Label layoutX="314.0" layoutY="14.0" text="Name:" />
+      <Label layoutX="63.0" layoutY="14.0" text="Account number:" fx:id="lblAccount" />
+      <Label layoutX="314.0" layoutY="14.0" text="Name:" fx:id="lblName"/>
    </children>
 </Pane>
