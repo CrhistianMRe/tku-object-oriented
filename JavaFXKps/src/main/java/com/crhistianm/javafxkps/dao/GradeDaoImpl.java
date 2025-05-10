@@ -32,7 +32,7 @@ public class GradeDaoImpl implements GradeDao{
         try {
             connect.openConnection();
 
-            sql = "SELECT account.Account_Number, student.Name, student.Surname, grade.Total_Grade, grade.Grade_Date"
+            sql = "SELECT account.Account_Number, student.Name, student.Surname, grade.Total_Grade, grade.Grade_Date, grade.ID"
                     +" FROM grade INNER JOIN student ON grade.Student_ID_FK = student.ID" 
                     +" INNER JOIN subject ON grade.Subject_ID_FK = subject.ID"
                     +" INNER JOIN account ON student.Account_ID_FK = account.ID"
