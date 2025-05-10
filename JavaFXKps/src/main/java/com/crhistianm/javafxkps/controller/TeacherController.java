@@ -50,6 +50,9 @@ public class TeacherController {
 
 
     @FXML 
+    public TableColumn<StudentGradeEditDto, String> colGradeId;
+
+    @FXML
     public TableColumn<StudentGradeEditDto, String> colAccountNumber;
 
     @FXML
@@ -72,7 +75,7 @@ public class TeacherController {
     public void initialize(){
         teacher = teacherData.findByAccId(this.id);
         System.out.println(teacher);
-        this.lblName.setText(teacher.getName().concat(" ".concat(teacher.getSurname())).concat(" Student Grades"));
+        this.lblName.setText(teacher.getName().concat(" ".concat(teacher.getSurname())).concat(" Change grades"));
         for (Subject subject: this.subjectData.findByTeacherId(teacher.getId())){
               comboCourse.getItems().addAll(subject.getName());
           }  
@@ -80,7 +83,7 @@ public class TeacherController {
 
     @FXML
     public void handleUpdateButtonClick(){
-
+        System.out.println(this.tblStudent.getSelectionModel().getSelectedIndex());
 
     }
 
@@ -103,6 +106,7 @@ public class TeacherController {
             System.out.println(grade);
 
 
+            colGradeId.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getGrade()));
             colAccountNumber.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getAccountNumber()));
             colStudentName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getStudentName()));
             colTotalGrade.setCellValueFactory(cellData -> new SimpleStringProperty(String.valueOf(cellData.getValue().getTotalGrade())));

@@ -3,6 +3,7 @@ package com.crhistianm.javafxkps.dto;
 import java.util.Date;
 
 public class StudentGradeEditDto {
+    private int gradeId;
     private String subjectName;
     private String accountNumber;
     private String studentName;
@@ -12,12 +13,21 @@ public class StudentGradeEditDto {
     public StudentGradeEditDto() {
     }
 
-    public StudentGradeEditDto(String subjectName, String accountNumber, String studentName, double totalGrade, Date gradeDate) {
+    public StudentGradeEditDto(int gradeId, String subjectName, String accountNumber, String studentName, double totalGrade, Date gradeDate) {
         this.subjectName = subjectName;
         this.accountNumber = accountNumber;
         this.studentName = studentName;
         this.totalGrade = totalGrade;
         this.gradeDate = gradeDate;
+        this.gradeId = gradeId;
+    }
+
+    public void setGradeId(int gradeId) {
+	    this.gradeId = gradeId;
+    }
+
+    public int getGradeId() {
+	    return gradeId;
     }
 
     public String getSubjectName() {
@@ -63,12 +73,6 @@ public class StudentGradeEditDto {
 
     @Override
     public String toString() {
-        return "StudentGradeEditDto{" +
-                "subjectName='" + subjectName + '\'' +
-                ", accountNumber='" + accountNumber + '\'' +
-                ", studentName='" + studentName + '\'' +
-                ", totalGrade=" + totalGrade +
-                ", gradeDate=" + gradeDate +
-                '}';
+        return super.toString();
     }
 }

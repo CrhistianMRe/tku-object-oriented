@@ -27,6 +27,7 @@
 
         <TableView fx:id="tblStudent">
             <columns>
+                <TableColumn fx:id="colGradeId" text="ID" prefWidth="1" />
                 <TableColumn fx:id="colAccountNumber" text="Account number" prefWidth="150" />
                 <TableColumn fx:id="colStudentName" text="Student name" prefWidth="350" />
                 <TableColumn fx:id="colTotalGrade" text="Total Grade" prefWidth="100" />
