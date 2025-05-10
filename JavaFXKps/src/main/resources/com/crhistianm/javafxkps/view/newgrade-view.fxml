@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crhistianm.javafxkps.view.AddGradeView">
+   <children>
+      <Label layoutX="18.0" layoutY="72.0" text="Account Number" />
+      <Label layoutX="16.0" layoutY="194.0" text="Name" />
+      <Label layoutX="268.0" layoutY="90.0" text="Score" />
+      <TextField fx:id="txtsScore" layoutX="265.0" layoutY="117.0" prefHeight="26.0" prefWidth="40.0" />
+      <Label fx:id="lblAccountNum" layoutX="18.0" layoutY="99.0" text="a" />
+      <Label fx:id="lblNameStudent" layoutX="18.0" layoutY="230.0" text="n" />
+      <Label fx:id="lblSubject" layoutX="184.0" layoutY="14.0" text="t" />
+      <Button layoutX="186.0" layoutY="260.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="254.0" layoutY="162.0" mnemonicParsing="false" text="Submit" />
+
+   </children>
+</AnchorPane>

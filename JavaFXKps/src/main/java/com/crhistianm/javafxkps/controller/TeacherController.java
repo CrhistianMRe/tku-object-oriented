@@ -95,8 +95,7 @@ public class TeacherController {
             int index = this.tblStudent.getSelectionModel().getSelectedIndex();
             ObservableList<StudentGradeEditDto>list; 
 
-                totalGradeChange=(Float.valueOf(event.getNewValue()));
-               
+            totalGradeChange=(Float.valueOf(event.getNewValue()));
 
             System.out.println("salta" + String.valueOf(totalGradeChange)); 
         if(index != -1 && totalGradeChange != 0){
@@ -108,16 +107,9 @@ public class TeacherController {
             grade.setGradeDate(java.sql.Date.valueOf(LocalDate.now()));
             grade.setTotalGrade(totalGradeChange);
 
-
             JOptionPane.showMessageDialog(null,gradeData.updateGrade(grade));
             comboFill();
             totalGradeChange = 0;
-            
-            
-
-
-
-
         }else {
             JOptionPane.showMessageDialog(null, "Select a row to update");
         }
