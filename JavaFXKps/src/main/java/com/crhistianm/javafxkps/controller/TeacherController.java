@@ -26,6 +26,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.Stage;
 
 public class TeacherController {
     TeacherDaoImpl teacherData = new TeacherDaoImpl();
@@ -56,7 +57,7 @@ public class TeacherController {
     public Button btnRestart;
 
     @FXML
-    public Button btnUpdate;
+    public Button btnBack;
 
     @FXML 
     public TableColumn<StudentGradeEditDto, String> colGradeId;
@@ -116,7 +117,10 @@ public class TeacherController {
     }
 
     @FXML
-    public void handleButtonAddClick(){}
+    public void handleButtonBackClick(){
+        Stage stage = (Stage) btnBack.getScene().getWindow();
+        stage.close();
+    }
 
     public void changeViewStatus(boolean bool){
 

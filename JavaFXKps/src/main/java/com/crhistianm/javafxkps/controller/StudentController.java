@@ -57,6 +57,7 @@ public class StudentController {
     @FXML
     public Button btnBack;
 
+    @FXML
     public void handleBtnBackClick(){
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();

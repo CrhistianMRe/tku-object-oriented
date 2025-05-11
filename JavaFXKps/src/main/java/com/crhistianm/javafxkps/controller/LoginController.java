@@ -34,7 +34,8 @@ public class LoginController {
         if (dataId != 666) {
             //auth return teacher or student 
             JOptionPane.showMessageDialog(null, "Login succesfull you are a ".concat(auth.verifyAccountType(dataId)));
-            String res = auth.verifyAccountType(dataId);
+            String res= null;
+            res = auth.verifyAccountType(dataId);
 
             if (res.equals("Teacher")) {
                 try {
@@ -95,10 +96,11 @@ public class LoginController {
                 } catch (IOException e) {
                     System.out.println("Error loading " + e);
                 }
+            }
             } else {
                 JOptionPane.showMessageDialog(null, "User account number or password not correct");
             }
 
         }
     }
-}
+

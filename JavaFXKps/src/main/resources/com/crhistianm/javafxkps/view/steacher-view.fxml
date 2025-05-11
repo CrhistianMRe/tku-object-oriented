@@ -38,7 +38,7 @@
         <HBox spacing="10" alignment="CENTER_RIGHT">
             <Button fx:id="btnEdit" text="Edit grade"  onAction="#handleEditButtonClick"/>
             <Button fx:id="btnRestart" text="Restart"  onAction="#handleButtonRestartClick"/>
-            <Button fx:id="btnAdd" text="Add"  onAction="#handleButtonAddClick"/>
+            <Button fx:id="btnBack" text="Back"  onAction="#handleButtonBackClick"/>
         </HBox>
     </VBox>
 </AnchorPane>

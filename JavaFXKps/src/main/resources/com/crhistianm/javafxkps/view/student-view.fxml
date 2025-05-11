@@ -13,7 +13,7 @@
             <TableColumn fx:id="colTotalGrade" prefWidth="120.39996337890625" text="Total Score" />
         </columns>
       </TableView>
-      <Button fx:id="btnBack" layoutX="330.0" layoutY="346.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="btnBack" layoutX="330.0" layoutY="346.0" mnemonicParsing="false" text="Back" onAction="#handleBtnBackClick"/>
       <Label fx:id="lblAverage" layoutX="266.0" layoutY="298.0" text="Average Score: ">
          <font>
             <Font size="23.0" />
