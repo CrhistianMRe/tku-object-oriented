@@ -13,11 +13,16 @@ import com.crhistianm.javafxkps.model.Grade;
 /**
  * GradeDaoImpl
  */
-public class GradeDaoImpl implements GradeDao{
+public class GradeDaoImpl implements GradeDaoCustom{
     KpsConnection connect = new KpsConnection();
     private String sql;
     private String answer;
     private PreparedStatement execute;
+
+    @Override
+    public ArrayList<Grade> findAll(Grade grade) {
+        return null;
+    }
 
     @Override
     public ArrayList<StudentGradeDto> findAllStudentGrade(int accId) {
