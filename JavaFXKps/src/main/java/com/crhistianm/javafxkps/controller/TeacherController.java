@@ -106,7 +106,7 @@ public class TeacherController {
             System.out.println(grade.getId());
             System.out.println("");
             grade.setGradeDate(java.sql.Date.valueOf(LocalDate.now()));
-            grade.setTotalGrade(totalGradeChange);
+            grade.setTotalGrade(Math.round(totalGradeChange));
 
             JOptionPane.showMessageDialog(null,gradeData.updateGrade(grade));
             comboFill();

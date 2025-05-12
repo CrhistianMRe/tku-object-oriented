@@ -82,7 +82,7 @@ public class StudentController {
 
         sum = sum/count;
 
-        this.lblAverage.setText("Average Score: "+ String.valueOf(sum));
+        this.lblAverage.setText("Average Score: "+ Integer.valueOf(String.valueOf(Math.round(sum))));
 
     }
 
